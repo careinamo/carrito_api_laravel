@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('catalogue/', 'CatalogueController')->name('catalogue');
+
+Route::post('shopping-carts/store', [CartController::class, 'store'])
+    ->name('shopping-cart.products.store');
+
+Route::delete('shopping-cart', [CartController::class, 'destroy'])
+    ->name('shopping-cart.products.destroy');
