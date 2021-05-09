@@ -15,7 +15,9 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->float('total');
+            $table->integer('token');
+            $table->float('total')->default(0);
+            $table->float('count')->default(0);;
             $table->timestamps();
         });
     }

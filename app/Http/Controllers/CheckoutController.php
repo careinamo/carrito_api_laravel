@@ -3,36 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cart;
 
 class CheckoutController extends Controller
 {
-    public function show(Request $request)
+    public function show(int $token)
     {
-    	$cart = Cart::find($request->cart_id);
+    	$cart = Cart::where('token', '=', $token)->with('products')->first();
 
-    	if (!isset($cart)) {
-    		$product = Product::find($request->product_id);
-				$this->validateStatusCategory($product);
-				$this->validateStock($product, 1);
-				$cart = Cart::create();
-				$cart->products()->attach($request->product_id, ['quantity' => 1]);
-	    		return $cart->load('products');
-    	}
-
-		$productInCart = $cart->products->find($request->product_id);
-
-    	if (isset($productInCart)) {
-			$this->validateStock($productInCart, $productInCart->pivot->quantity);
-			$this->validateStatusCategory($productInCart);
-			$cart->products()->updateExistingPivot($request->product_id, ['quantity' => ++$productInCart->pivot->quantity]);
+    	if(isset($cart)) {
 			return $cart;
-        }
+	    } else {
+			return response()->json([
+                'message' => 'Cart not found',
+            ], 404);
+	    }
+    }
 
-		$product = Product::find($request->product_id);
+	public function store(int $token)
+    {
+    	// TO DO make table orders logic
+    	$cart = Cart::where('token', '=', $token)->with('products')->first();
 
-		$this->validateStock($product, 1);
-		$this->validateStatusCategory($product);
-		$cart->products()->attach($request->product_id, ['quantity' => 1]);
-		return $cart->load('products');
+    	if(isset($cart)) {
+		    foreach ($cart->products as $product) {
+		    	$product->stock = $product->stock - $product->pivot->quantity;
+		    	$product->save();
+		    }
+
+		    $cart->products()->detach();
+			$cart->delete();
+
+			return response()->json([
+	            'message' => 'Order created',
+	        ], 200);
+	    }  else {
+			return response()->json([
+                'message' => 'Cart not found',
+            ], 404);
+	    }
+
     }
 }

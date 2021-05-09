@@ -15,10 +15,10 @@ class CreateCartProductTable extends Migration
     {
         Schema::create('cart_product', function (Blueprint $table) {
             $table->id();
-            $table->integer('cart_id');
-            $table->integer('product_id');
+            $table->integer('cart_id')->references('id')->on('carts');
+            $table->integer('product_id')->references('id')->on('products');
             $table->integer('quantity')->default(1);
-            $table->float('total');
+            $table->float('total')->default(0);
             $table->timestamps();
         });
     }

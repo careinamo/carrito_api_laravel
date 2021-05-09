@@ -20,7 +20,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'stock' => 4,
             'price' => 10000,
-            'image' => 'polo-ralph-lauren-6182-3604731-1-zoom.jpg'
+            'image' => asset("images/polo-ralph-lauren-6182-3604731-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'polo-ralph-lauren-7241-1817521-1-zoom.jpg'
+            'image' => asset("images/polo-ralph-lauren-7241-1817521-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
             'category_id' => 3,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'polo-ralph-lauren-2162-8664421-1-zoom.jpg'
+            'image' => asset("images/polo-ralph-lauren-2162-8664421-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -50,7 +50,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'marketing-personal-5623-5506711-1-zoom.jpg'
+            'image' => asset("images/marketing-personal-5623-5506711-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -60,7 +60,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'marketing-personal-5652-3061801-1-zoom.jpg'
+            'image' => asset("images/marketing-personal-5652-3061801-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -70,7 +70,7 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'marketing-personal-0903-5467351-1-zoom.jpg'
+            'image' => asset("images/marketing-personal-0903-5467351-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -80,7 +80,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'tommy-hilfiger-kids-9919-4202541-1-zoom.jpg'
+            'image' => asset("images/tommy-hilfiger-kids-9919-4202541-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -90,7 +90,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'tommy-hilfiger-kids-8660-4002541-1-zoom.jpg'
+            'image' => asset("images/tommy-hilfiger-kids-8660-4002541-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -100,7 +100,7 @@ class ProductSeeder extends Seeder
             'category_id' => 5,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'tommy-hilfiger-kids-6187-3252541-1-zoom.jpg'
+            'image' => asset("images/tommy-hilfiger-kids-6187-3252541-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -110,7 +110,7 @@ class ProductSeeder extends Seeder
             'category_id' => 6,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'marketing-personal-7472-5641221-1-zoom.jpg'
+            'image' => asset("images/marketing-personal-7472-5641221-1-zoom.jpg")
         ]);
 
         DB::table('Products')->insert([
@@ -120,7 +120,7 @@ class ProductSeeder extends Seeder
             'category_id' => 6,
             'stock' => 10,
             'price' => 10000,
-            'image' => 'marketing-personal-5594-349078-1-zoom.jpg'
+            'image' => asset("images/marketing-personal-5594-349078-1-zoom.jpg")
         ]);
     }
 }

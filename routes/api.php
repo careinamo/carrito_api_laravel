@@ -26,3 +26,9 @@ Route::post('shopping-cart/store', 'CartController@store')
 
 Route::delete('shopping-cart', 'CartController@destroy')
     ->name('shopping-cart.destroy');
+
+Route::get('checkout/{token}', 'CheckoutController@show')
+    ->name('shopping-cart.checkout');
+
+Route::post('checkout/confirm/{token}', 'CheckoutController@store')
+    ->name('shopping-cart.checkout');
