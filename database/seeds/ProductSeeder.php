@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
             'name' => 'Camisa polo',
             'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
             'category_id' => 3,
-            'stock' => 0,
+            'stock' => 4,
             'price' => 10000,
             'image' => 'polo-ralph-lauren-6182-3604731-1-zoom.jpg'
         ]);

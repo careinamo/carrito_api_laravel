@@ -18,6 +18,7 @@ class CreateCartProductTable extends Migration
             $table->integer('cart_id');
             $table->integer('product_id');
             $table->integer('quantity')->default(1);
+            $table->float('total');
             $table->timestamps();
         });
     }

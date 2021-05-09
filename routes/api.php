@@ -21,8 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('catalogue/', 'CatalogueController')->name('catalogue');
 
-Route::post('shopping-carts/store', [CartController::class, 'store'])
-    ->name('shopping-cart.products.store');
+Route::post('shopping-cart/store', 'CartController@store')
+    ->name('shopping-cart.store');
 
-Route::delete('shopping-cart', [CartController::class, 'destroy'])
-    ->name('shopping-cart.products.destroy');
+Route::delete('shopping-cart', 'CartController@destroy')
+    ->name('shopping-cart.destroy');
